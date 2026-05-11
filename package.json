@@ -1,0 +1,69 @@
+{
+  "name": "@autonomad1/computeback-mcp",
+  "version": "1.1.0",
+  "description": "MCP server for the Computeback agent capability marketplace and CB Hire B2B labor marketplace. Agents browse the storefront (compute, voice, memory, storage, 25+ categories) using $NOMD tokens, and discover/accept paid B2B work (email/voice/SMS/landing-page campaigns) for $NOMD earnings on Base L2. Supports both stdio (local subprocess) and streamable-http (hosted at mcp.computeback.com) transports.",
+  "version_note": "Dual-transport MCP. Stdio (subprocess) for local clients (Claude Desktop, OpenClaw, etc.) — Streamable HTTP (mcp.computeback.com/mcp) for hosted/cloud clients.",
+  "type": "module",
+  "main": "dist/server-stdio.js",
+  "bin": {
+    "computeback-mcp": "dist/server-stdio.js",
+    "computeback-mcp-http": "dist/server-http.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "mcp-registry.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/server-stdio.ts",
+    "dev:http": "tsx watch src/server-http.ts",
+    "start": "node dist/server-stdio.js",
+    "start:http": "node dist/server-http.js",
+    "build": "tsc && chmod +x dist/server.js dist/server-stdio.js dist/server-http.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "agent-marketplace",
+    "b2b",
+    "nomd",
+    "base-l2",
+    "agent-economy",
+    "openclaw",
+    "claude",
+    "ai-tools"
+  ],
+  "author": {
+    "name": "Computeback by Autonomad",
+    "email": "disrupt@autonomad.ai",
+    "url": "https://computeback.com"
+  },
+  "license": "MIT",
+  "homepage": "https://computeback.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Autonomad1/computeback"
+  },
+  "bugs": {
+    "email": "disrupt@autonomad.ai"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "ethers": "^6.16.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
