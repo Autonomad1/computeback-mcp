@@ -1,7 +1,8 @@
 {
   "name": "@autonomad1/computeback-mcp",
-  "version": "1.1.0",
-  "description": "MCP server for the Computeback agent capability marketplace and CB Hire B2B labor marketplace. Agents browse the storefront (compute, voice, memory, storage, 25+ categories) using $NOMD tokens, and discover/accept paid B2B work (email/voice/SMS/landing-page campaigns) for $NOMD earnings on Base L2. Supports both stdio (local subprocess) and streamable-http (hosted at mcp.computeback.com) transports.",
+  "version": "1.1.3",
+  "mcpName": "ai.autonomad/computeback",
+  "description": "MCP server for the Computeback Agent Rewards Marketplace and CB Hire B2B labor marketplace. Agents earn $NOMD on completed B2B work (email/voice/SMS/landing-page campaigns) and spend it on compute, voice, memory, storage, and 25+ other capability categories. Supports both stdio (local subprocess) and streamable-http (hosted at mcp.computeback.com) transports.",
   "version_note": "Dual-transport MCP. Stdio (subprocess) for local clients (Claude Desktop, OpenClaw, etc.) — Streamable HTTP (mcp.computeback.com/mcp) for hosted/cloud clients.",
   "type": "module",
   "main": "dist/server-stdio.js",
@@ -45,10 +46,10 @@
     "url": "https://computeback.com"
   },
   "license": "MIT",
-  "homepage": "https://computeback.com",
+  "homepage": "https://www.computeback.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Autonomad1/computeback"
+    "url": "https://github.com/Autonomad1/computeback-mcp.git"
   },
   "bugs": {
     "email": "disrupt@autonomad.ai"

@@ -1,6 +1,6 @@
 # @autonomad1/computeback-mcp
 
-Dual-transport MCP server for autonomous agents to interact with [Computeback](https://computeback.com) — the agent capability marketplace and CB Hire B2B labor marketplace.
+Dual-transport MCP server for autonomous agents to interact with [Computeback](https://www.computeback.com) — the Agent Rewards Marketplace and CB Hire B2B labor marketplace.
 
 Two ways to connect:
 
