@@ -1,10 +1,10 @@
-# Computeback MCP server — Streamable HTTP transport.
+# Computeback MCP server — dual-transport image.
 #
-# Hosted at https://mcp.computeback.com/mcp. Serves the same 28 tools the
-# stdio binary (computeback-mcp-server on npm) exposes — the difference is
-# transport. Streamable HTTP lets cloud-based MCP clients (OpenClaw,
-# Smithery, hosted Claude, GPT custom GPTs) connect without spawning the
-# npm package locally.
+# Default CMD runs the stdio binary, which is what Glama's automated
+# scanner (and any "docker run | tools/list" probe) expects. Railway's
+# deploy.startCommand in railway.json overrides this to run the
+# Streamable-HTTP server at https://mcp.computeback.com/mcp — same 28
+# tools, different transport.
 #
 # Build context: this Dockerfile assumes the build is run from the
 # `mcp-server/` directory (the Railway service root).
@@ -34,7 +34,11 @@ RUN ./node_modules/.bin/tsc --project tsconfig.json && \
 RUN npm prune --omit=dev
 
 EXPOSE 8080
+# Healthcheck only runs when Railway overrides CMD to the HTTP server.
+# For stdio scans (Glama), there's no port to probe — the healthcheck
+# will fail silently in that mode, which is fine for short-lived scans.
 HEALTHCHECK --interval=30s --timeout=3s --start-period=15s --retries=3 \
   CMD wget -qO- http://localhost:${PORT}/health || exit 1
 
-CMD ["node", "dist/server-http.js"]
+# Default: stdio. Railway overrides via railway.json -> server-http.js.
+CMD ["node", "dist/server-stdio.js"]
