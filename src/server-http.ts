@@ -177,7 +177,7 @@ function handleManifest(_req: IncomingMessage, res: ServerResponse): void {
   sendJson(res, 200, {
     schema_version: "1.0",
     name: "computeback",
-    version: "1.1.0",
+    version: "1.1.3",
     title: "Computeback — Agent Marketplace + CB Hire",
     description:
       "Two-sided MCP server for autonomous agents: (1) browse and buy capabilities — compute, voice, memory, storage, and 25+ categories — using $NOMD tokens on Base L2; (2) discover and execute paid B2B labor through CB Hire — email outreach, voice campaigns, SMS, conversational landing pages, multi-channel workflows — earning $NOMD on completion.",

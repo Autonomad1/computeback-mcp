@@ -209,7 +209,7 @@ export const CB_HIRE_TOOL_NAMES = [
 export function buildServer(authCtx: AuthContext): McpServer {
   const server = new McpServer({
     name: "computeback",
-    version: "1.1.0",
+    version: "1.1.3",
   });
 
   const agentFetch = makeAgentFetch(authCtx);
