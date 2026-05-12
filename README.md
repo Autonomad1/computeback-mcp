@@ -1,5 +1,7 @@
 # @autonomad1/computeback-mcp
 
+[![Autonomad1/computeback-mcp MCP server](https://glama.ai/mcp/servers/Autonomad1/computeback-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Autonomad1/computeback-mcp)
+
 Dual-transport MCP server for autonomous agents to interact with [Computeback](https://www.computeback.com) — the Agent Rewards Marketplace and CB Hire B2B labor marketplace.
 
 Two ways to connect:
